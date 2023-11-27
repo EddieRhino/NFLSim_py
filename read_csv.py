@@ -1,6 +1,9 @@
 import csv
 teams = ["MIN","DET","GNB","CHI","DAL","PHI","WAS","NYG","ATL","NOR","TAM","CAR","LAR","ARI","SFO","SEA",
-"BAL","PIT","CIN","CLE","MIA","NWE","NYJ","BUF","IND","HOU","TEN","JAX","KAN","DEN","LVR","LAC"]
+"BAL","PIT","CIN","CLE","MIA","NWE","NYJ","BUF","IND","HOU","TEN","JAX","KAN","DEN","LVR","LAC"] #Array of all the team abbreviations
+
+
+#Appending stats to arrays based on position from a CSV file
 filenameQB = "QB.csv"
 fieldsQB = []
 rowsQB = []
@@ -20,14 +23,6 @@ with open(filenameRB, 'r') as csvfile:
     for row in csvreader:
         rowsRB.append(row)
 
-# filenameWRTE = "WRTE.csv"
-# fieldsWRTE = []
-# rowsWRTE = []
-# with open(filenameWRTE, 'r') as csvfile:
-#     csvreader = csv.reader(csvfile)
-#     fieldsWRTE = next(csvreader)
-#     for row in csvreader:
-#         rowsWRTE.append(row)
 
 filenameOff = "offense.csv"
 fieldsOff = []
