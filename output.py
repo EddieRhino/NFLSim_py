@@ -1,27 +1,29 @@
 from sim import *
 import math
 
+
+#Calculating a bet based on expected outcome and how much you'd win/lose based on outcomes
 def calc_full_bet(a_ml,h_ml,overs,h_covers,a_covers,num_sims,h_wins,a_wins):
-    aml_money = 0
+    aml_money = 0 #away money line variable
     if(a_ml < 0):
-        aml_money = ((((100/abs(a_ml))+1)*a_wins)-num_sims)/num_sims
+        aml_money = ((((100/abs(a_ml))+1)*a_wins)-num_sims)/num_sims #Takes into account win calculation if the team is favored
     else:
-        aml_money = ((((abs(a_ml)/100)+1)*a_wins)-num_sims)/num_sims
+        aml_money = ((((abs(a_ml)/100)+1)*a_wins)-num_sims)/num_sims #same as above but if the team is the underdog
 
     hml_money = 0
     if(h_ml < 0):
-        hml_money = ((((100/abs(h_ml))+1)*h_wins)-num_sims)/num_sims
+        hml_money = ((((100/abs(h_ml))+1)*h_wins)-num_sims)/num_sims #Same as the calculation above
     else:
         hml_money = ((((abs(h_ml)/100)+1)*h_wins)-num_sims)/num_sims
 
-    overs_money = ((overs-(num_sims-overs))/num_sims)
+    overs_money = ((overs-(num_sims-overs))/num_sims) #Calculations for overs/unders/covering for money gained/lost per game
     unders_money = ((num_sims-overs)-overs)/num_sims
     h_covers_money = (h_covers-a_covers)/num_sims
     a_covers_money = (a_covers-h_covers)/num_sims
 
     return [aml_money, hml_money, overs_money, unders_money, h_covers_money, a_covers_money]
 
-
+#Does the same as above but takes into account the moneyline for the over/under and spread bets
 def calc_full_bet_adv(a_ml,h_ml,overs,h_covers,a_covers,num_sims,h_wins,a_wins,hsml,asml,oml,uml):
     aml_money = 0
     if(a_ml < 0):
@@ -42,14 +44,14 @@ def calc_full_bet_adv(a_ml,h_ml,overs,h_covers,a_covers,num_sims,h_wins,a_wins,h
 
     return [aml_money, hml_money, overs_money, unders_money, h_covers_money, a_covers_money]
 
-
+#Nfl simulation without betting
 def play_many_games_b(num,home,away):
     num_wins_home = 0
     num_wins_away = 0
-    hpy = 0
-    hry = 0
-    apy = 0
-    ary = 0
+    hpy = 0 #home pass yards
+    hry = 0 #home rushing yards
+    apy = 0 #away pass yards
+    ary = 0 #away rush yards
     scores = []
     yards_gained = []
     for x in range(num):
