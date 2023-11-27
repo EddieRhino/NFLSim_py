@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <body>
+    <form action="submission.html" method="POST">
+      <h1>NFL Predictions</h1>
+      <section class="home-team">
+        <label for="home">Who should be the Home Team?</label>
+        <select name="home" id="home">
+          <option value="Arizona">ARI</option>
+          <option value="Atlanta">ATL</option>
+          <option value="Baltimore">BAL</option>
+          <option value="Buffalo">BUF</option>
+          <option value="Carolina">CAR</option>
+          <option value="Chicago">CHI</option>
+          <option value="Cincinnati">CIN</option>
+          <option value="Cleveland">CLE</option>
+          <option value="Dallas">DAL</option>
+          <option value="Denver">DEN</option>
+          <option value="Detroit">DET</option>
+          <option value="Packers">GNB</option>
+          <option value="Houston">HOU</option>
+          <option value="Indianapolis">IND</option>
+          <option value="Jacksonville">JAX</option>
+          <option value="Chiefs">KAN</option>
+          <option value="Raiders">LVR</option>
+          <option value="Chargers">LAC</option>
+          <option value="Rams">LAR</option>
+          <option value="Miami">MIA</option>
+          <option value="Minnesota">MIN</option>
+          <option value="Patriots">NWE</option>
+          <option value="Saints">NOR</option>
+          <option value="Giants">NYG</option>
+          <option value="Jets">NYJ</option>
+          <option value="Eagles">PHI</option>
+          <option value="Steelers">PIT</option>
+          <option value="49ers">SFO</option>
+          <option value="Seahawks">SEA</option>
+          <option value="Buccaneers">TAM</option>
+          <option value="Titans">TEN</option>
+          <option value="Commanders">WAS</option>
+        </select>
+      </section>
+
+      <section class="away-team">
+        <label for="away">Who should be the Away Team?</label>
+        <select name="away" id="away">
+          <option value="Arizona">ARI</option>
+          <option value="Atlanta">ATL</option>
+          <option value="Baltimore">BAL</option>
+          <option value="Buffalo">BUF</option>
+          <option value="Carolina">CAR</option>
+          <option value="Chicago">CHI</option>
+          <option value="Cincinnati">CIN</option>
+          <option value="Cleveland">CLE</option>
+          <option value="Dallas">DAL</option>
+          <option value="Denver">DEN</option>
+          <option value="Detroit">DET</option>
+          <option value="Packers">GNB</option>
+          <option value="Houston">HOU</option>
+          <option value="Indianapolis">IND</option>
+          <option value="Jacksonville">JAX</option>
+          <option value="Chiefs">KAN</option>
+          <option value="Raiders">LVR</option>
+          <option value="Chargers">LAC</option>
+          <option value="Rams">LAR</option>
+          <option value="Miami">MIA</option>
+          <option value="Minnesota">MIN</option>
+          <option value="Patriots">NWE</option>
+          <option value="Saints">NOR</option>
+          <option value="Giants">NYG</option>
+          <option value="Jets">NYJ</option>
+          <option value="Eagles">PHI</option>
+          <option value="Steelers">PIT</option>
+          <option value="49ers">SFO</option>
+          <option value="Seahawks">SEA</option>
+          <option value="Buccaneers">TAM</option>
+          <option value="Titans">TEN</option>
+          <option value="Commanders">WAS</option>
+        </select>
+      </section>
+
+      <section class="Number-of-simulations">
+        <label for="Num">How Many Games Would you like to Simulate?</label>
+        <input type="number" name="sims" id="sims">
+      </section>
+
+      <section class="spread">
+        <label for="spread">What is the Spread Relative to the Home Team?</label>
+        <input type="number" name="spread" id="spread" step="0.5">
+      </section>
+
+      <section class="over-under">
+        <label for="ou">What is the Over/Under of the Game</label>
+        <input type="number" name="ou" id="ou" step="0.5" min="0">
+      </section>
+
+      <section class="simulate">
+        <input type="submit" value="Run Simulation">
+      </section>
+    </form>
+  </body>
+</html>
